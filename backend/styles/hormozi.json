@@ -1,0 +1,19 @@
+{
+  "id": "hormozi",
+  "name": "Hormozi",
+  "font": "Arial Black",
+  "font_size": 56,
+  "primary_color": "#FFFFFF",
+  "secondary_color": "#00E676",
+  "outline_color": "#000000",
+  "outline": 5,
+  "shadow": 2,
+  "bold": true,
+  "uppercase": true,
+  "words_per_line": 3,
+  "animation": "pop",
+  "animation_intensity": 1.2,
+  "keyword_color": "#FFE600",
+  "position": "center",
+  "margin_v": 160
+}

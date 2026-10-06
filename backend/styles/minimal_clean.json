@@ -1,0 +1,17 @@
+{
+  "id": "minimal_clean",
+  "name": "Minimal Clean",
+  "font": "Arial",
+  "font_size": 44,
+  "primary_color": "#F5F5F5",
+  "secondary_color": "#90CAF9",
+  "outline_color": "#000000",
+  "outline": 1.5,
+  "shadow": 1,
+  "bold": false,
+  "uppercase": false,
+  "words_per_line": 4,
+  "animation": "none",
+  "position": "bottom",
+  "margin_v": 190
+}

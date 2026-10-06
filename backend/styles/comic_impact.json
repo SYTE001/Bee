@@ -1,0 +1,19 @@
+{
+  "id": "comic_impact",
+  "name": "Comic Impact",
+  "font": "Impact",
+  "font_size": 62,
+  "primary_color": "#FFEB3B",
+  "secondary_color": "#FFFFFF",
+  "outline_color": "#000000",
+  "outline": 7,
+  "shadow": 4,
+  "bold": true,
+  "uppercase": true,
+  "words_per_line": 2,
+  "animation": "shake",
+  "animation_intensity": 1.6,
+  "rotation": -4,
+  "position": "center",
+  "margin_v": 170
+}

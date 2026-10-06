@@ -1,0 +1,39 @@
+# NVIDIA GPU override for docker-compose.yml.
+#
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml up --build
+#
+# Builds the backend on the CUDA base image so torch / faster-whisper / NVENC
+# see the driver, and requests a GPU for both the API and the worker.
+
+services:
+  api:
+    build:
+      args:
+        BASE_IMAGE: nvidia/cuda:12.4.1-cudnn-runtime-ubuntu22.04
+    environment:
+      WHISPER_DEVICE: cuda
+      WHISPER_COMPUTE_TYPE: float16
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility,video
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu, video]
+
+  worker:
+    build:
+      args:
+        BASE_IMAGE: nvidia/cuda:12.4.1-cudnn-runtime-ubuntu22.04
+    environment:
+      WHISPER_DEVICE: cuda
+      WHISPER_COMPUTE_TYPE: float16
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility,video
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu, video]

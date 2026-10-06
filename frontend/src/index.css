@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-forge-bg text-forge-text font-sans antialiased;
+  margin: 0;
+}
+
+/* Thin, dark scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-forge-border rounded-full;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold
+      transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-forge-accent to-forge-accent2 text-white
+      hover:opacity-90;
+  }
+  .btn-ghost {
+    @apply btn border border-forge-border bg-forge-panel2 hover:border-forge-accent;
+  }
+  .card {
+    @apply rounded-2xl border border-forge-border bg-forge-panel p-5;
+  }
+  .input {
+    @apply w-full rounded-lg border border-forge-border bg-forge-panel2 px-3 py-2 text-sm
+      outline-none focus:border-forge-accent;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-medium uppercase tracking-wide text-forge-muted;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "bounce_pop",
+  "name": "Bounce Pop",
+  "font": "Comic Sans MS",
+  "font_size": 54,
+  "primary_color": "#FFFFFF",
+  "secondary_color": "#FF6D00",
+  "outline_color": "#000000",
+  "outline": 4,
+  "shadow": 2,
+  "bold": true,
+  "words_per_line": 3,
+  "animation": "bounce",
+  "animation_intensity": 1.4,
+  "keyword_color": "#FFEB3B",
+  "position": "bottom"
+}

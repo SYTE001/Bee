@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+.mypy_cache/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Runtime data (never commit user media, models, or the local sqlite DB)
+backend/data/
+*.db
+*.db-journal
+
+# Secrets
+.env
+.env.local
+!.env.example
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,17 @@
+{
+  "id": "typewriter",
+  "name": "Typewriter",
+  "font": "Courier New",
+  "font_size": 48,
+  "primary_color": "#00FF66",
+  "secondary_color": "#1B5E20",
+  "outline_color": "#000000",
+  "outline": 2,
+  "shadow": 1,
+  "bold": true,
+  "uppercase": true,
+  "words_per_line": 3,
+  "animation": "typewriter",
+  "position": "bottom",
+  "fade_in_ms": 20
+}

@@ -1,0 +1,17 @@
+{
+  "id": "karaoke_glow",
+  "name": "Karaoke Glow",
+  "font": "Arial",
+  "font_size": 54,
+  "primary_color": "#FFFFFF",
+  "secondary_color": "#00B0FF",
+  "outline_color": "#0D47A1",
+  "outline": 3,
+  "shadow": 0,
+  "bold": true,
+  "words_per_line": 4,
+  "animation": "glow",
+  "animation_intensity": 1.3,
+  "keyword_color": "#FF4081",
+  "position": "bottom"
+}

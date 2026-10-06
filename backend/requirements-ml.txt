@@ -1,0 +1,26 @@
+# ClipForge backend — heavy ML dependencies (install separately, GPU recommended)
+# pip install -r requirements-ml.txt
+
+# Speech-to-text with word-level timestamps
+faster-whisper==1.1.0
+ctranslate2==4.5.0
+
+# Speaker diarization (requires a HuggingFace token in .env: HF_TOKEN)
+pyannote.audio==3.3.2
+
+# Audio analysis: energy, pitch, speech rate, laughter features
+librosa==0.10.2.post1
+soundfile==0.12.1
+numpy==1.26.4
+scipy==1.13.1
+
+# Vision: face detection for reframing + emotion cues
+opencv-python-headless==4.10.0.84
+mediapipe==0.10.21
+
+# Audio event classification (laughter / applause / cheering)
+torch==2.5.1
+transformers==4.47.1
+
+# Scene-cut detection
+scenedetect[opencv]==0.6.4

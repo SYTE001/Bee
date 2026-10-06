@@ -1,0 +1,89 @@
+# ClipForge — full stack: API, pipeline worker, Redis, Postgres, frontend.
+#
+# CPU-only hosts: `docker compose up` uses the default (ubuntu) base.
+# NVIDIA hosts:    `docker compose -f docker-compose.yml -f docker-compose.gpu.yml up`
+#
+# Copy backend/.env.example to backend/.env and fill in SECRET_KEY / tokens.
+
+services:
+  api:
+    build:
+      context: ./backend
+      args:
+        ENABLE_ML: "true"
+    container_name: clipforge-api
+    env_file: ./backend/.env
+    environment:
+      # compose services resolve each other by name
+      DATABASE_URL: postgresql+psycopg2://clipforge:${POSTGRES_PASSWORD:-clipforge}@db:5432/clipforge
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/1
+      TASK_BACKEND: celery
+    volumes:
+      - clipforge-data:/data
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: ./backend
+      args:
+        ENABLE_ML: "true"
+    container_name: clipforge-worker
+    env_file: ./backend/.env
+    environment:
+      DATABASE_URL: postgresql+psycopg2://clipforge:${POSTGRES_PASSWORD:-clipforge}@db:5432/clipforge
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/1
+      TASK_BACKEND: celery
+    # The worker runs the same code; switch the entrypoint to celery.
+    command: ["celery", "-A", "app.workers.celery_app", "worker", "--loglevel=info", "--concurrency=${WORKER_CONCURRENCY:-2}"]
+    volumes:
+      - clipforge-data:/data
+    depends_on:
+      api:
+        condition: service_started
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: clipforge-redis
+    restart: unless-stopped
+
+  db:
+    image: postgres:16-alpine
+    container_name: clipforge-db
+    environment:
+      POSTGRES_USER: clipforge
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-clipforge}
+      POSTGRES_DB: clipforge
+    volumes:
+      - clipforge-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U clipforge"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: clipforge-frontend
+    depends_on:
+      - api
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+volumes:
+  clipforge-data:
+  clipforge-db:

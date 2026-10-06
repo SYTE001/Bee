@@ -1,0 +1,28 @@
+{
+  "$comment": "Ground-truth labels for `python -m eval.precision_at_k`. One entry per source file; `source` must match the project's source_name. This example matches the project created by `make seed`, so `make seed && make eval` scores end-to-end.",
+  "projects": [
+    {
+      "source": "demo-podcast.mp4",
+      "labels": [
+        {
+          "start": 0.5,
+          "end": 6.5,
+          "category": "insight",
+          "note": "the consistency-over-talent story"
+        },
+        {
+          "start": 4.0,
+          "end": 9.5,
+          "category": "funny",
+          "note": "shocked reaction beat"
+        },
+        {
+          "start": 8.0,
+          "end": 11.5,
+          "category": "actionable",
+          "note": "three-step checklist"
+        }
+      ]
+    }
+  ]
+}

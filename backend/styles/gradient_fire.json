@@ -1,0 +1,18 @@
+{
+  "id": "gradient_fire",
+  "name": "Gradient Fire",
+  "font": "Arial Black",
+  "font_size": 56,
+  "primary_color": "#FF6F00",
+  "secondary_color": "#FFD600",
+  "outline_color": "#3E0000",
+  "outline": 4,
+  "shadow": 3,
+  "bold": true,
+  "uppercase": true,
+  "words_per_line": 3,
+  "animation": "rainbow",
+  "animation_intensity": 1.0,
+  "keyword_color": "#FF1744",
+  "position": "bottom"
+}

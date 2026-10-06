@@ -1,0 +1,19 @@
+{
+  "id": "beast",
+  "name": "Beast",
+  "font": "Arial Black",
+  "font_size": 60,
+  "primary_color": "#00E5FF",
+  "secondary_color": "#FFEA00",
+  "outline_color": "#000000",
+  "outline": 6,
+  "shadow": 3,
+  "bold": true,
+  "uppercase": true,
+  "words_per_line": 2,
+  "animation": "bounce",
+  "animation_intensity": 1.5,
+  "keyword_color": "#FF1744",
+  "position": "center",
+  "margin_v": 150
+}

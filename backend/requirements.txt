@@ -1,0 +1,19 @@
+# ClipForge backend — core (works without GPU / heavy ML deps)
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+sqlalchemy==2.0.36
+psycopg2-binary==2.9.10
+python-multipart==0.0.20
+PyJWT==2.10.1
+email-validator==2.2.0
+celery==5.4.0
+redis==5.2.1
+yt-dlp==2024.12.13
+httpx==0.28.1
+anthropic==0.42.0
+
+# Dev / test
+pytest==8.3.4
+pytest-asyncio==0.25.0

@@ -1,0 +1,17 @@
+{
+  "id": "boxed_highlight",
+  "name": "Boxed Highlight",
+  "font": "Arial Black",
+  "font_size": 50,
+  "primary_color": "#FFFFFF",
+  "secondary_color": "#FFD600",
+  "outline_color": "#000000",
+  "back_color": "#000000",
+  "outline": 0,
+  "shadow": 0,
+  "bold": true,
+  "words_per_line": 3,
+  "animation": "none",
+  "border_style": 3,
+  "position": "bottom"
+}

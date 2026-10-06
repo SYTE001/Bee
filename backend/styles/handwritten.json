@@ -1,0 +1,17 @@
+{
+  "id": "handwritten",
+  "name": "Handwritten",
+  "font": "Segoe Script",
+  "font_size": 52,
+  "primary_color": "#FFFFFF",
+  "secondary_color": "#FFAB91",
+  "outline_color": "#000000",
+  "outline": 2,
+  "shadow": 1,
+  "bold": false,
+  "italic": true,
+  "words_per_line": 4,
+  "animation": "pop",
+  "animation_intensity": 0.7,
+  "position": "bottom"
+}

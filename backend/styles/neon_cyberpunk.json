@@ -1,0 +1,22 @@
+{
+  "id": "neon_cyberpunk",
+  "name": "Neon Cyberpunk",
+  "font": "Arial Black",
+  "font_size": 52,
+  "primary_color": "#00E5FF",
+  "secondary_color": "#FF00E5",
+  "outline_color": "#1A0033",
+  "outline": 2,
+  "shadow": 0,
+  "bold": true,
+  "uppercase": true,
+  "words_per_line": 3,
+  "animation": "glow",
+  "animation_intensity": 1.8,
+  "keyword_color": "#FF00E5",
+  "position": "bottom",
+  "tags": {
+    "glow_color_a": "#00E5FF",
+    "glow_color_b": "#FF00E5"
+  }
+}
